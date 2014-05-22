@@ -6,6 +6,8 @@ Additionall it generates a script that you can execute on first login in order t
 
 - install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - install [vagrant](http://www.vagrantup.com/)
+- ensure [automatic syncing of Guest Additions between host and
+  guest](http://kvz.io/blog/2013/01/16/vagrant-tip-keep-virtualbox-guest-additions-in-sync/) via `vagrant plugin install vagrant-vbguest`
 
 ```sh
 git clone https://github.com/thlorenz/vagrant-docker && cd vagrant-docker
