@@ -5,8 +5,11 @@ apt-get update
 # make sure we get a good nodejs version
 apt-get install -y python-software-properties python g++ make
 add-apt-repository ppa:chris-lea/node.js
+# for latest tmux and such
+add-apt-repository -y ppa:pi-rho/dev
 apt-get update
 apt-get install -y nodejs
+apt-get install -y tmux
 
 apt-get install -y clang
 
@@ -37,6 +40,8 @@ apt-get install -y python-pygments
 git clone https://github.com/ggreer/the_silver_searcher.git
 (cd the_silver_searcher && ./build.sh && make install)
 rm -rf the_silver_searcher
+
+## latest tmux
 
 # my dotfile setup
 git clone https://github.com/thlorenz/dotfiles.git
