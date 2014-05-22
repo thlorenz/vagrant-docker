@@ -1,27 +1,23 @@
-# vagrant
+# vagrant docker
 
-Playing with vagrant and docker -- that's all.
+Sets up Ubuntu inside a VirtualBox, upgrades the kernel and applies my dotfiles.
 
+Additionall it generates a script that you can execute on first login in order to setup docker.
 
-## Steps to play along
-    
-    git fetch --all
-    git checkout docker
+- install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- install [vagrant](http://www.vagrantup.com/)
 
-    # stand up our initial box and get all our things installed
-    vagrant up
+```sh
+git clone https://github.com/thlorenz/vagrant-docker && cd vagrant-docker
+vagrant up
+```
 
-    # the box will reboot since it upgrades your linux kernel to support the aufs file system
+Things should set themselves up and when it's done you can:
 
-    # at this point we can 'vagrant ssh' into your box to install docker run via a script that was prepared
-    sudo sh ./install-docker.sh
+```sh
+vagrant ssh
+```
 
-    # if you are like me and want to launch docker manually do the following
-    sudo rm -rf /etc/init/docker.conf
-    sudo reboot
+## Note
 
-    # now you can manually start it after loggin in again via
-    docker -d
-
-    # note that in this setup docker is aliased to listen via http instead a unix file socket i.e. try
-    alias docker 
+It assumes you have a nice machine and therefore allocates **4 CPUs** and **4GiB Memory** to the box.
