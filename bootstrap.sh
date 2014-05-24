@@ -71,3 +71,5 @@ cp -R ./dotfiles/fonts /usr/share/
 ## https://github.com/dotcloud/docker/issues/4568#issuecomment-37259489
 apt-get install -y cgroup-lite
 apt-get install -y lxc-docker
+
+usermod --append --groups docker vagrant
